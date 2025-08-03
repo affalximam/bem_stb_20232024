@@ -1,0 +1,3086 @@
+/*
+==================================================
+    1. BASIC
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    overflow-x: hidden;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+    font-style: inherit;
+}
+
+@font-face {
+    font-family: PublicSans-BlackItalic;
+    src: url("../../fonts/Public_Sans/PublicSans-BlackItalic.ttf");
+}
+@font-face {
+    font-family: PublicSans-Black;
+    src: url("../../fonts/Public_Sans/PublicSans-Black.ttf");
+}
+@font-face {
+    font-family: PublicSans-Bold;
+    src: url("../../fonts/Public_Sans/PublicSans-Bold.ttf");
+}
+@font-face {
+    font-family: PublicSans-BoldItalic;
+    src: url("../../fonts/Public_Sans/PublicSans-BoldItalic.ttf");
+}
+@font-face {
+    font-family: PublicSans-SemiBold;
+    src: url("../../fonts/Public_Sans/PublicSans-SemiBold.ttf");
+}
+@font-face {
+    font-family: PublicSans-Medium;
+    src: url("../../fonts/Public_Sans/PublicSans-Medium.ttf");
+}
+@font-face {
+    font-family: PublicSans-MediumItalic;
+    src: url("../../fonts/Public_Sans/PublicSans-MediumItalic.ttf");
+}
+@font-face {
+    font-family: PublicSans-Regular;
+    src: url("../../fonts/Public_Sans/PublicSans-Regular.ttf");
+}
+
+.vector-1, .vector-2, .vector-3{
+    width: 100%;
+}
+
+
+
+/*
+==================================================
+    2. NAVBAR
+*/
+
+.navbar {
+    background-color: transparent;
+    z-index: 99;
+    color: white;
+    overflow-x: hidden;
+    transition: .5s;
+}
+
+.navbar-transform{
+    transition: .5s;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+.navbar-transform .navbar-nav{
+    transition: .5s;
+    background-color: transparent !important;
+}
+
+.navbar .navbar-brand img {
+    height: 50px;
+    margin-left: 0;
+    padding-left: 30px;
+}
+
+.navbar a {
+    color: white;
+    opacity: 1;
+    cursor: pointer;
+    font-family: PublicSans-Medium;
+}
+
+.navbar .nav-link{
+    color: white;
+    font-size: 1.2em;
+}
+
+.navbar .nav-link:hover{
+    color: #ffffff;
+}
+
+.navbar-toggler {
+    box-shadow: none !important;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-right: 30px;
+    margin-right: 0;
+}
+
+.navbar-toggler span {
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
+    display: absolute;
+    background-color: white;
+    margin: 3px;
+    transition: 0.5s;
+}
+
+.navbar-toggler span:nth-child(1) {
+    transform-origin: center;
+    animation: navtogspan1 1s ease-in-out forwards;
+}
+
+.navbar-toggler.open span:nth-child(1) {
+    transform-origin: center;
+    animation: navtogspan1hov 1s ease-in-out forwards;
+}
+
+.navbar-toggler span:nth-child(2) {
+    transform-origin: center;
+    animation: navtogspan2 1s ease-in-out forwards;
+    transition: 0.5s;
+}
+
+.navbar-toggler:hover span:nth-child(2) {
+    width: 30px;
+    margin-left: 3px;
+}
+
+.navbar-toggler.open span:nth-child(2) {
+    transform-origin: center;
+    animation: navtogspan2hov 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+.navbar-toggler span:nth-child(3) {
+    transform-origin: center;
+    animation: navtogspan3 1s ease-in-out forwards;
+}
+
+.navbar-toggler.open span:nth-child(3) {
+    transform-origin: center;
+    animation: navtogspan3hov 1s ease-in-out forwards;
+}
+
+@keyframes navtogspan1 {
+    0% {
+        transform: translate(0, 8px) rotate(45deg);
+    }
+
+    20% {
+        transform: translate(0, 8px) rotate(0deg);
+    }
+
+    80% {
+        transform: translate(0, 8px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes navtogspan1hov {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    20% {
+        transform: translate(0, 8px) rotate(0deg);
+    }
+
+    80% {
+        transform: translate(0, 8px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 8px) rotate(45deg);
+    }
+}
+
+@keyframes navtogspan2 {
+    0% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes navtogspan2hov {
+    0% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes navtogspan3 {
+    0% {
+        transform: translate(0, -10px) rotate(-45deg);
+    }
+
+    35% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    45% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    55% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    65% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+@keyframes navtogspan3hov {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    35% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    45% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    55% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    65% {
+        transform: translate(0, -10px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(0, -10px) rotate(-45deg);
+    }
+}
+
+
+/*
+==================================================
+    3. HOME
+*/
+
+.jumbotron{
+    background-color: black;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden !important;
+}
+
+.jumbotron-home{
+    background-image: url("../../images/IMG_0012.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 5%;
+    animation: jumbotron-home 30s ease-in-out infinite;
+    display: relative;
+}
+
+@keyframes jumbotron-home {
+    0%{
+        background-position: center;
+    }
+    10%{
+        background-position: center;
+    }
+    20%{
+        background-position: left;
+    }
+    30%{
+        background-position: left;
+    }
+    45%{
+        background-position: center;
+    }
+    55%{
+        background-position: center;
+    }
+    70%{
+        background-position: right;
+    }
+    80%{
+        background-position: right;
+    }
+    90%{
+        background-position: center;
+    }
+    100%{
+        background-position: center;
+    }
+}
+
+.jumbotron::after{
+    content: '';
+    height: 60px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.jumbotron-home::after{
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.jumbotron h1{
+    z-index: 5;
+    font-family: Publicsans-Bold;
+    font-size: 3em;
+    margin: 0 auto;
+}
+
+.jumbotron h2{
+    z-index: 5;
+    font-family: PublicSans-BlackItalic;
+    font-size: 4.5em;
+    margin: 0 auto;
+}
+.jumbotron h3{
+    z-index: 5;
+    font-family: Publicsans-Bold;
+    font-size: 3.4em;
+}
+
+.jumbotron .vector-1{
+    width: 100%;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 95vh;
+}
+
+.sambutan-presma .sambutan-presma-1{
+    text-align: center;
+    background-color: #074132;
+    height: 250px;
+    width: 100%;
+    margin: 0;
+    color: white;
+    overflow: hidden !important;
+}
+
+.sambutan-presma .sambutan-presma-1 h2{
+    font-family: Publicsans-Blackitalic;
+    font-size: 4.5em;
+    z-index: 5;
+    overflow: hidden;
+    max-width: 100%;
+    align-content: center;
+    line-height: 250px;
+}
+
+.sambutan-presma .sambutan-presma-1 h2::after{
+    content: 'Jelajah Informasi Terbaru';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -250px;
+    font-size: 1.5em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 5px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.sambutan-presma .sambutan-presma-2 {
+    color: white;
+    padding-top: 50px;
+    background-image: url("../../images/IMG_0012\ \(2\).webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.sambutan-presma .sambutan-presma-2 .col-8{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sambutan-presma .sambutan-presma-2 img{
+    width: 70%;
+    margin-left: 30%;
+    z-index: 10 !important;
+}
+
+.sambutan-presma .sambutan-presma-2 h3{
+    font-size: 4em;
+    font-family: PublicSans-SemiBold;
+}
+
+.sambutan-presma .sambutan-presma-2 p{
+    font-size: 2.2em;
+    font-family: PublicSans-Medium;
+}
+
+.sambutan-presma .sambutan-presma-2 a{
+    background-color: #066048;
+    width: 75%;
+    color: white;
+    font-family: PublicSans-Black;
+}
+
+.sambutan-presma .sambutan-presma-3{
+    background-color: #074132;
+    height: 100px;
+}
+
+.dokumentasi-terbaru{
+    background-color: #E6E6E6;
+}
+
+.dokumentasi-terbaru .vector-2{
+    width: 100%;
+    z-index: 5;
+}
+
+.dokumentasi-terbaru .dokumentasi-terbaru-1{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.dokumentasi-terbaru .dokumentasi-terbaru-1 h2{
+    text-align: center;
+    font-size: 4em;
+    font-family: Publicsans-Blackitalic;
+    padding-top: 100px;
+    z-index: 9;
+}
+
+.dokumentasi-terbaru .dokumentasi-terbaru-1 h2::after{
+    content: 'Dokumentasi Terbaru';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1em;
+    left: 0;
+    font-size: 1.5em;
+    max-width: 100%;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #E6E6E6;
+    opacity: .4;   
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.dokumentasi-terbaru .dokumentasi-terbaru-1 .card{
+    background-color: #ffffff;
+    padding: 20px;
+    border: none;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.dokumentasi-terbaru .dokumentasi-terbaru-1 .card:hover{
+    box-shadow: 5px 5px 10px rgba(100, 100, 100, .5);
+}
+
+.dokumentasi-terbaru .dokumentasi-terbaru-1 .card h3{
+    font-family: PublicSans-Regular;
+}
+
+.contact{
+    background-color: #085977;
+    padding: 50px 0;
+}
+
+.contact .bottom-navigation{
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+.contact .bottom-navigation a{
+    display: block;
+    color: #ffffff;
+    font-size: 3em;
+    font-family: Publicsans-MediumItalic;
+}
+
+.contact h2{
+    font-size: 4em;
+    color: #085977;
+    font-family: Publicsans-Blackitalic;
+    -webkit-text-stroke: 2px #FFFFFF;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact .social-media a img{
+    height: 50px;
+    margin: 10px;
+}
+
+.contact p{
+    font-family: PublicSans-SemiBold;
+    font-size: 2.25em;
+    color: #ffffff;
+}
+
+.contact form label{
+    font-family: Publicsans-Bolditalic;
+    background-color: transparent;
+}
+
+.contact form input{
+    box-shadow: none !important;
+    border: none;
+    font-family: Publicsans-Bolditalic;
+}
+
+.contact form textarea{
+    border: none;
+    box-shadow: none !important;
+    min-height: 100px !important;
+    max-height: 100px !important;
+    font-family: Publicsans-Bolditalic;
+}
+
+.contact form button{
+    background-color: #002D3D !important;
+    color: #ffffff !important;
+    width: 75%;
+    margin-top: 20px;
+    font-family: Publicsans-Bold;
+}
+
+.backtotop {
+    width: 50px;
+    height: 50px;
+    background-color: #6DC7E8;
+    border-radius: 5px;
+    transform-origin: center;
+    display: absolute;
+    position: fixed;
+    transition: .5s;
+    animation: backtotop-out 1s linear forwards;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.backtotop img{
+    width: 40px;
+    margin: 5px;
+}
+
+.backtotop-in {
+    animation: backtotop-in .5s linear forwards;
+}
+
+@keyframes backtotop-in {
+    0% {
+        right: -20%;
+        bottom: 5%;
+        transform: rotate(-90deg) scale(.5);
+    }
+
+    50% {
+        right: 5%;
+        transform: rotate(-90deg) scale(.5);
+        opacity: .5;
+    }
+
+    70% {
+        right: 5%;
+        transform: rotate(-90deg) scale(.5);
+        opacity: .5;
+    }
+
+    100% {
+        bottom: 5%;
+        right: 5%;
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+@keyframes backtotop-out {
+    0% {
+        bottom: 5%;
+        right: 5%;
+        transform: rotate(0deg) scale(.5);
+        opacity: 1;
+    }
+
+    30% {
+        right: 5%;
+        transform: rotate(180deg) scale(.5);
+        opacity: .5;
+    }
+
+    70% {
+        right: 5%;
+        bottom: 5%;
+        transform: rotate(180deg) scale(.5);
+        opacity: .5;
+    }
+
+    98% {
+        right: 5%;
+        bottom: -100px;
+        transform: rotate(180deg) scale(.5);
+    }
+
+    100% {
+        right: -20%;
+        bottom: -100px;
+        transform: rotate(180deg) scale(.5);
+    }
+}
+
+footer{
+    background-color: #003D54;
+    text-align: center;
+    height: 150px;
+    font-size: 4em;
+    font-family: Publicsans-Blackitalic;
+    align-content: center;
+    color: #ffffff;
+}
+
+.preloader{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #074132;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preloader-container{
+    perspective: 200px;
+    transform: preserve-3d;
+}
+.box{
+    --size: 12vmin;
+    width: var(--size); 
+    height: var(--size); 
+    background-color: rgba(255, 255, 255, .3);
+    transform: rotateZ(30deg) skew(-35deg);
+    position: relative;
+    animation: preloader-animate 800ms infinite ease-in-out both alternate;
+}
+.box:nth-of-type(1){
+    animation-delay: 0.1s;
+}
+.box:nth-of-type(2){
+    animation-delay: 0.2s;
+}
+.box:nth-of-type(3){
+    animation-delay: 0.3s;
+}
+
+.box::after, .box::before{
+    content: "";
+    width: inherit;
+    height: 5px;
+    position: absolute;
+    left: 0; 
+    bottom: 0; 
+}
+.box::before{
+    transform-origin: left bottom;
+    background-color: rgba(255, 255, 255, 1);
+    transform: translateX(var(--size)) rotateZ(180deg) skew(45deg);
+}
+.box::after{
+    background-color: rgba(255, 255, 255, 1);
+    transform-origin: right bottom;
+    transform: translateX(0) rotateZ(90deg) skew(-45deg);
+}
+
+/* bring them all togehter */
+.box + .box{
+    top: 0;
+    position: absolute;
+    transform: translateY(0) rotateZ(30deg) skew(-35deg);
+}
+
+@keyframes preloader-animate{
+    from{
+        transform: translateY(0) rotateZ(30deg) skew(-35deg);
+    }
+    to{
+        transform: translateY(calc(-1.2 * var(--size))) rotateZ(30deg) skew(-35deg);
+    }
+}
+
+.onloading {
+    overflow: hidden !important;
+}
+
+/*
+==================================================
+    4. TENTANG
+*/
+
+.jumbotron-tentang{
+    height: 60vh;
+    background-image: url('../../images/IMG_0012\ \(3\).webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-tentang 20s ease-in-out infinite;
+}
+
+@keyframes jumbotron-tentang {
+    0%{
+        background-position: center -5vh;
+    }
+    10%{
+        background-position: center -5vh;
+    }
+    20%{
+        background-position: left -5vh;
+    }
+    30%{
+        background-position: left -5vh;
+    }
+    45%{
+        background-position: center -5vh;
+    }
+    55%{
+        background-position: center -5vh;
+    }
+    70%{
+        background-position: right -5vh;
+    }
+    80%{
+        background-position: right -5vh;
+    }
+    90%{
+        background-position: center -5vh;
+    }
+    100%{
+        background-position: center -5vh;
+    }
+}
+
+.jumbotron-tentang::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-tentang .container{
+    z-index: 10;
+}
+
+.jumbotron-tentang h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-tentang h1::after{
+    content: 'BEM STB 2024';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.tentang{
+    background-color: #E6E6E6;
+}
+
+.tentang-1{
+    width: 100%;
+    height: 50px;
+    background-color: #074132;
+}
+
+.tentang .vector-2{
+    width: 100%;
+    transform: rotateY(180deg);
+}
+
+.breadcrumbs{
+    font-family: PublicSans-Medium;
+    font-size: 2em;
+    color: #000;
+    padding-left: 20px;
+}
+
+.tentang-3{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.tentang-3 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 10px;
+}
+
+.tentang-3 h1::after{
+    content: ' TENTANG KAMI ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;   
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.tentang-3 pre{
+    word-wrap: break-word;
+    width: 100%;
+    text-wrap: wrap;
+    text-align: justify;
+    font-family: PublicSans-Medium;
+    text-align: justify;
+    font-size: 1.25em;
+}
+
+.tentang-3 pre h2{
+    font-family: PublicSans-Semibold;
+    font-size: 2.25em;
+}
+
+.tentang .vector-3{
+    transform: rotateY(0deg);
+}
+
+/*
+==================================================
+    5. STRUKTUR ORGANISASI
+*/
+
+.jumbotron-struktur-organisasi{
+    height: 60vh;
+    background-image: url('../../images/IMG_0012\ \(3\).webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-tentang 20s ease-in-out infinite;
+}
+
+.jumbotron-struktur-organisasi::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-struktur-organisasi .container{
+    z-index: 10;
+}
+
+.jumbotron-struktur-organisasi h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-struktur-organisasi h1::after{
+    content: 'BEM STB 2024';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.struktur-organisasi{
+    background-color: #E6E6E6;
+}
+
+.struktur-organisasi-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.struktur-organisasi-2{
+    overflow-x: hidden !important;
+}
+
+.struktur-organisasi-2 .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.struktur-organisasi-2 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.struktur-organisasi-2 h1::after{
+    content: ' STRUKTUR ORGANISASI ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.struktur-organisasi-3{
+    background-image: linear-gradient(to top, #6C8C83, #E6E6E6);
+    width: 100%;
+    height: 100px;
+}
+
+.struktur-organisasi-4{
+    background-image: url("../../images/full-hd.webp");
+    background-size: contain;
+    background-position: top;
+    background-repeat: repeat-y;
+    overflow-x: hidden !important;
+}
+
+.struktur-organisasi-4-1{
+    background-color: rgba(7, 65, 50, .5);
+    padding: 50px 0;
+}
+
+.struktur-organisasi-4-1 h2{
+    color: #fff;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+}
+
+.struktur-organisasi-4-1 .card{
+    background-color: transparent;
+    border: none;
+    margin: 20px auto;
+    width: 100%;
+}
+
+.struktur-organisasi-4-1 .card .card-left, .card-right{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.struktur-organisasi-4-1 .card .card-left{
+    text-align: right;
+}
+
+.struktur-organisasi-4-1 .card .card-right{
+    text-align: left;
+}
+
+.struktur-organisasi-4-1 .card img{
+    border-radius: 10px;
+    width: 100%;
+    margin: auto;
+}
+
+.struktur-organisasi-4-1 .card .card-text-1{
+    font-family: PublicSans-Blackitalic;
+    color: #00000000;
+    -webkit-text-stroke: 0.5px #ffffff;
+    -webkit-text-fill-color: transparent;
+    font-size: 5em;
+    text-align: inherit;
+    line-height: 1em;
+    margin: 0;
+}
+
+.struktur-organisasi-4-1 .card .card-text-2{
+    font-family: PublicSans-Bold;
+    color: #ffffff;
+    font-size: 4em;
+    margin: 0;
+}
+
+.struktur-organisasi-4-1 .card .card-text-3{
+    font-family: PublicSans-Blackitalic;
+    color: #ffffff;
+    font-size: 4.5em;
+}
+
+.struktur-organisasi-4-2-1,
+.struktur-organisasi-4-3-1,
+.struktur-organisasi-4-4-1,
+.struktur-organisasi-4-5-1,
+.struktur-organisasi-4-6-1{
+    height: 300px;
+    background-color: rgba(0, 0, 0, .5);
+    text-align: center;
+    align-content: center;
+    overflow-x: hidden;
+}
+
+.struktur-organisasi-4-2-1 h3,
+.struktur-organisasi-4-3-1 h3,
+.struktur-organisasi-4-4-1 h3,
+.struktur-organisasi-4-5-1 h3,
+.struktur-organisasi-4-6-1 h3{
+    font-size: 2em;
+    font-family: PublicSans-Blackitalic;
+    color: #fff;
+}
+
+.struktur-organisasi-4-2-2{
+    background-color: rgba(7, 52, 65, .65);
+    padding: 50px 0;
+    overflow-x: hidden !important;
+    max-width: 100%;
+}
+
+.struktur-organisasi-4-3-2{
+    background-color: rgba(7, 44, 65, .5);
+    padding: 50px 0;
+    overflow-x: hidden !important;
+    max-width: 100%;
+}
+
+.struktur-organisasi-4-4-2{
+    background-color: rgba(7, 28, 65, .5);
+    padding: 50px 0;
+    overflow-x: hidden !important;
+    max-width: 100%;
+}
+
+.struktur-organisasi-4-5-2{
+    background-color: rgba(18, 7, 65, .5);
+    padding: 50px 0;
+    overflow-x: hidden !important;
+    max-width: 100%;
+}
+
+.struktur-organisasi-4-6-2{
+    background-color: rgba(39, 7, 65, .5);
+    padding: 50px 0 0 0;
+    overflow-x: hidden !important;
+    max-width: 100%;
+}
+
+.struktur-organisasi-4 .card{
+    background-color: transparent;
+    border: none;
+}
+
+.struktur-organisasi-4-2 .card,
+.struktur-organisasi-4-3 .card,
+.struktur-organisasi-4-4 .card,
+.struktur-organisasi-4-5 .card,
+.struktur-organisasi-4-6 .card {
+    margin: 20px auto;
+}
+
+.struktur-organisasi-4-2 .card .card-right,
+.struktur-organisasi-4-3 .card .card-right,
+.struktur-organisasi-4-4 .card .card-right,
+.struktur-organisasi-4-5 .card .card-right,
+.struktur-organisasi-4-6 .card .card-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.struktur-organisasi-4-2-2-1 img,
+.struktur-organisasi-4-3-2-1 img,
+.struktur-organisasi-4-4-2-1 img,
+.struktur-organisasi-4-5-2-1 img,
+.struktur-organisasi-4-6-2-1 img{
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.struktur-organisasi-4-2-2-1 .card .card-text-1,
+.struktur-organisasi-4-3-2-1 .card .card-text-1,
+.struktur-organisasi-4-4-2-1 .card .card-text-1,
+.struktur-organisasi-4-5-2-1 .card .card-text-1,
+.struktur-organisasi-4-6-2-1 .card .card-text-1{
+    color: #00000000;
+    -webkit-text-stroke: .5px #ffffff;
+    -webkit-text-fill-color: transparent;
+    font-family: PublicSans-Blackitalic;
+    margin: 0;
+    font-size: 4em;
+}
+
+.struktur-organisasi-4-2-2-1 .card .card-text-2,
+.struktur-organisasi-4-3-2-1 .card .card-text-2,
+.struktur-organisasi-4-4-2-1 .card .card-text-2,
+.struktur-organisasi-4-5-2-1 .card .card-text-2,
+.struktur-organisasi-4-6-2-1 .card .card-text-2{
+    color: #fff;
+    font-size: 2em;
+    font-family: PublicSans-Bold;
+}
+
+.struktur-organisasi-4-2-2-1 .card .card-text-3,
+.struktur-organisasi-4-3-2-1 .card .card-text-3,
+.struktur-organisasi-4-4-2-1 .card .card-text-3,
+.struktur-organisasi-4-5-2-1 .card .card-text-3,
+.struktur-organisasi-4-6-2-1 .card .card-text-3{
+    color: #ffffff;
+    font-size: 1.5em;
+    font-family: PublicSans-Blackitalic;
+}
+
+.struktur-organisasi-4-2 .card,
+.struktur-organisasi-4-3 .card,
+.struktur-organisasi-4-4 .card,
+.struktur-organisasi-4-5 .card,
+.struktur-organisasi-4-6 .card{
+    margin: 20px auto;
+}
+
+.struktur-organisasi-4-2-2-2 img,
+.struktur-organisasi-4-3-2-2 img,
+.struktur-organisasi-4-4-2-2 img,
+.struktur-organisasi-4-5-2-2 img,
+.struktur-organisasi-4-6-2-2 img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.struktur-organisasi-4-2-2-2 .card-text-1,
+.struktur-organisasi-4-3-2-2 .card-text-1,
+.struktur-organisasi-4-4-2-2 .card-text-1,
+.struktur-organisasi-4-5-2-2 .card-text-1,
+.struktur-organisasi-4-6-2-2 .card-text-1{
+    color: #00000000;
+    -webkit-text-stroke: .5px #ffffff;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    font-family: PublicSans-Blackitalic;
+    margin: 0;
+}
+
+.struktur-organisasi-4-2-2-2 .card-text-2,
+.struktur-organisasi-4-3-2-2 .card-text-2,
+.struktur-organisasi-4-4-2-2 .card-text-2,
+.struktur-organisasi-4-5-2-2 .card-text-2,
+.struktur-organisasi-4-6-2-2 .card-text-2{
+    color: #fff;
+    font-size: 1.2em;
+    font-family: PublicSans-Bold;
+}
+
+.struktur-organisasi-4-2-2-2 .card-text-3,
+.struktur-organisasi-4-3-2-2 .card-text-3,
+.struktur-organisasi-4-4-2-2 .card-text-3,
+.struktur-organisasi-4-5-2-2 .card-text-3,
+.struktur-organisasi-4-6-2-2 .card-text-3{
+    color: #ffffff;
+    font-size: 1.5em;
+    font-family: PublicSans-Blackitalic;
+}
+
+
+/*
+==================================================
+    6. PROGRAM KERJA
+*/
+
+.jumbotron-program-kerja{
+    height: 60vh;
+    background-image: url('../../images/IMG_0012\ \(3\).webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-program-kerja 20s ease-in-out infinite;
+}
+
+@keyframes jumbotron-program-kerja {
+    0%{
+        background-position: center -5vh;
+    }
+    10%{
+        background-position: center -5vh;
+    }
+    20%{
+        background-position: left -5vh;
+    }
+    30%{
+        background-position: left -5vh;
+    }
+    45%{
+        background-position: center -5vh;
+    }
+    55%{
+        background-position: center -5vh;
+    }
+    70%{
+        background-position: right -5vh;
+    }
+    80%{
+        background-position: right -5vh;
+    }
+    90%{
+        background-position: center -5vh;
+    }
+    100%{
+        background-position: center -5vh;
+    }
+}
+
+.jumbotron-program-kerja::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-program-kerja .container{
+    z-index: 10;
+}
+
+.jumbotron-program-kerja h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-program-kerja h1::after{
+    content: 'BEM STB 2024';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.program-kerja{
+    background-color: #E6E6E6;
+}
+
+.program-kerja .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.program-kerja-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.program-kerja-2 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.program-kerja-2 h1::after{
+    content: ' PROGRAM KERJA ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.program-kerja-3{
+    padding-top: 50px;
+}
+
+.program-kerja-3 .col-md-6{
+    margin: 0;
+    padding: 0;
+}
+
+.program-kerja-3 .card{
+    margin: 30px;
+    border: none;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.program-kerja-3 .card img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.program-kerja-3 .card h2{
+    text-align: center;
+    font-size: 2.2em;
+    font-family: PublicSans-Blackitalic;
+    padding: 10px 0;
+}
+
+/*
+==================================================
+    7. DOKUMENTASI
+*/
+
+.jumbotron-dokumentasi{
+    height: 60vh;
+    background-image: url('../../images/IMG_0012\ \(3\).webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-dokumentasi 20s ease-in-out infinite;
+}
+
+@keyframes jumbotron-dokumentasi {
+    0%{
+        background-position: center -5vh;
+    }
+    10%{
+        background-position: center -5vh;
+    }
+    20%{
+        background-position: left -5vh;
+    }
+    30%{
+        background-position: left -5vh;
+    }
+    45%{
+        background-position: center -5vh;
+    }
+    55%{
+        background-position: center -5vh;
+    }
+    70%{
+        background-position: right -5vh;
+    }
+    80%{
+        background-position: right -5vh;
+    }
+    90%{
+        background-position: center -5vh;
+    }
+    100%{
+        background-position: center -5vh;
+    }
+}
+
+.jumbotron-dokumentasi::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-dokumentasi .container{
+    z-index: 10;
+}
+
+.jumbotron-dokumentasi h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-dokumentasi h1::after{
+    content: 'BEM STB 2024';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.dokumentasi{
+    background-color: #E6E6E6;
+}
+
+.dokumentasi .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.dokumentasi-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.dokumentasi-2 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.dokumentasi-2 h1::after{
+    content: ' DOKUMENTASI ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.dokumentasi-3{
+    padding-top: 50px;
+}
+
+.dokumentasi-3 .col-md-6{
+    margin: 0;
+    padding: 0;
+}
+
+.dokumentasi-3 .card{
+    margin: 30px;
+    border: none;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.dokumentasi-3 .card img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.dokumentasi-3 .card h2{
+    font-size: 2.2em;
+    font-family: PublicSans-Blackitalic;
+    padding: 10px 0 0 0;
+}
+
+.dokumentasi-3 .card p{
+    font-size: 1.5em;
+    font-family: PublicSans-Blackitalic;
+}
+
+/*
+==================================================
+    8. KONTAK
+*/
+
+.jumbotron-kontak{
+    height: 60vh;
+    background-image: url('../../images/IMG_0012\ \(3\).webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-kontak 20s ease-in-out infinite;
+}
+
+@keyframes jumbotron-kontak {
+    0%{
+        background-position: center -5vh;
+    }
+    10%{
+        background-position: center -5vh;
+    }
+    20%{
+        background-position: left -5vh;
+    }
+    30%{
+        background-position: left -5vh;
+    }
+    45%{
+        background-position: center -5vh;
+    }
+    55%{
+        background-position: center -5vh;
+    }
+    70%{
+        background-position: right -5vh;
+    }
+    80%{
+        background-position: right -5vh;
+    }
+    90%{
+        background-position: center -5vh;
+    }
+    100%{
+        background-position: center -5vh;
+    }
+}
+
+.jumbotron-kontak::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-kontak .container{
+    z-index: 10;
+}
+
+.jumbotron-kontak h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-kontak h1::after{
+    content: 'BEM STB 2024';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.kontak{
+    background-color: #E6E6E6;
+}
+
+.kontak .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.kontak-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.kontak-2 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.kontak-2 h1::after{
+    content: ' KONTAK ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+/*
+==================================================
+    9. PROFIL ANGGOTA
+*/
+
+.jumbotron-profil-anggota{
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+}
+
+.jumbotron-profil-anggota::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-profil-anggota .container{
+    z-index: 10;
+}
+
+.jumbotron-profil-anggota h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-profil-anggota h1::after{
+    content: 'BEM STB 2024';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 4px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.profil-anggota{
+    background-color: #E6E6E6;
+    overflow-x: hidden;
+}
+
+.profil-anggota .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.profil-anggota-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.profil-anggota-2 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.profil-anggota-2 h1::after{
+    content: ' PROFILE ANGGOTA ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.profil-anggota-3 img{
+    width: 100%;
+    box-shadow: 5px 5px 10px rgba(100, 100, 100, .5);
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.profil-anggota-3{
+    padding-top: 50px;
+    font-family: PublicSans-Bold;
+    font-size: 2em;
+}
+/*
+==================================================
+    10. PROGRAM-KERJA-DETAIL
+*/
+
+.jumbotron-program-kerja-detail{
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-program-kerja-detail 20s ease-in-out infinite;
+}
+
+@keyframes jumbotron-program-kerja-detail {
+    0%{
+        background-position: center -5vh;
+    }
+    10%{
+        background-position: center -5vh;
+    }
+    20%{
+        background-position: left -5vh;
+    }
+    30%{
+        background-position: left -5vh;
+    }
+    45%{
+        background-position: center -5vh;
+    }
+    55%{
+        background-position: center -5vh;
+    }
+    70%{
+        background-position: right -5vh;
+    }
+    80%{
+        background-position: right -5vh;
+    }
+    90%{
+        background-position: center -5vh;
+    }
+    100%{
+        background-position: center -5vh;
+    }
+}
+
+.jumbotron-program-kerja-detail::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-program-kerja-detail .container{
+    z-index: 10;
+}
+
+.jumbotron-program-kerja-detail h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-program-kerja-detail h1::after{
+    content: 'BEM STB 2024';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 4px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.program-kerja-detail{
+    background-color: #E6E6E6;
+}
+
+.program-kerja-detail .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.program-kerja-detail-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.program-kerja-detail-2 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.program-kerja-detail-2 h1::after{
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.program-kerja-detail-3 pre{
+    padding-top: 50px;
+    font-size: 2em;
+    text-wrap: wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+/*
+==================================================
+    11. DOKUMENTASI-DETAIL
+*/
+
+.jumbotron-dokumentasi-detail{
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-dokumentasi-detail 20s ease-in-out infinite;
+}
+
+@keyframes jumbotron-dokumentasi-detail {
+    0%{
+        background-position: center -5vh;
+    }
+    10%{
+        background-position: center -5vh;
+    }
+    20%{
+        background-position: left -5vh;
+    }
+    30%{
+        background-position: left -5vh;
+    }
+    45%{
+        background-position: center -5vh;
+    }
+    55%{
+        background-position: center -5vh;
+    }
+    70%{
+        background-position: right -5vh;
+    }
+    80%{
+        background-position: right -5vh;
+    }
+    90%{
+        background-position: center -5vh;
+    }
+    100%{
+        background-position: center -5vh;
+    }
+}
+
+.jumbotron-dokumentasi-detail::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-dokumentasi-detail .container{
+    z-index: 10;
+}
+
+.jumbotron-dokumentasi-detail h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-dokumentasi-detail h1::after{
+    content: ' BEM STB 2024 ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.dokumentasi-detail{
+    background-color: #E6E6E6;
+}
+
+.dokumentasi-detail .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.dokumentasi-detail-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.dokumentasi-detail-2{
+    overflow-x: hidden;
+}
+
+.dokumentasi-detail-2 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.dokumentasi-detail-2 h1::after{
+    content: 'DOKUMENTASI KEGIATAN';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.dokumentasi-detail-2 h2{
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    font-size: 2em;
+    padding-bottom: 20px;
+}
+
+.dokumentasi-detail-3 img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.dokumentasi-detail-3 pre{
+    padding-top: 50px;
+    font-size: 2em;
+    text-wrap: wrap;
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+/*
+==================================================
+    12. TENTANG DEVELOPER
+*/
+
+.jumbotron-developer{
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -5vh;
+    background-image: url('../../images/IMG_0012\ \(3\).webp');
+    background-attachment: fixed;
+    padding-top: 175px;
+    animation: jumbotron-developer 20s ease-in-out infinite;
+}
+
+@keyframes jumbotron-developer {
+    0%{
+        background-position: center -5vh;
+    }
+    10%{
+        background-position: center -5vh;
+    }
+    20%{
+        background-position: left -5vh;
+    }
+    30%{
+        background-position: left -5vh;
+    }
+    45%{
+        background-position: center -5vh;
+    }
+    55%{
+        background-position: center -5vh;
+    }
+    70%{
+        background-position: right -5vh;
+    }
+    80%{
+        background-position: right -5vh;
+    }
+    90%{
+        background-position: center -5vh;
+    }
+    100%{
+        background-position: center -5vh;
+    }
+}
+
+.jumbotron-developer::after{
+    height: 60vh;
+    background-color: rgba(0, 0, 0, .6);
+} 
+
+.jumbotron-developer .container{
+    z-index: 10;
+}
+
+.jumbotron-developer h1{
+    font-family: PublicSans-Blackitalic;
+    font-size: 4.5em;
+}
+
+.jumbotron-developer h1::after{
+    content: ' BEM STB 2024 ';
+    z-index: -1;
+    display: block;
+    position: relative;
+    top: -1.1em;
+    font-size: 2em;
+    max-width: 100vw;
+    overflow-x: hidden;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    color: #074132;
+    opacity: .4;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+}
+
+.developer{
+    background-color: #E6E6E6;
+}
+
+.developer .vector-2{
+    transform: rotateY(180deg) !important;
+}
+
+.developer-1{
+    background-color: #074132;
+    width: 100%;
+    height: 50px;
+}
+
+.developer-3 h1{
+    font-size: 6em;
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    z-index: 2 !important;
+    padding-top: 20px;
+    overflow-x: hidden;
+}
+
+.developer-3 h1::after{
+    content: 'TENTANG DEVELOPER';
+    z-index: -1;
+    display: block;
+    position: relative;
+    left: 0;
+    top: -1.1em;
+    line-height: auto;
+    margin-bottom: -1em;
+    font-size: 1.5em;
+    text-wrap: nowrap;
+    opacity: .4;
+    overflow: hidden;
+    -webkit-text-stroke: 5px #7D7D7D;
+    -webkit-text-fill-color: transparent;
+}
+
+.developer-3 h2{
+    text-align: center;
+    font-family: PublicSans-Blackitalic;
+    font-size: 2em;
+    padding-bottom: 20px;
+}
+
+.developer-3 img{
+    height: 450px;
+    width: 500px;
+    margin: 20px auto;
+}
+
+.developer-3 a.btn{
+    width: 100%;
+    margin: 5px auto;
+}
+
+.developer-3 svg{
+    width: 30px;
+    height: 30px;
+}
+
+
+/* RRRRRRRRRRRRRRRR
+    Responsive 
+*/
+/* Small devices (portain phones, 576px and down) */
+@media screen and (max-width: 576px) {
+    .navbar .navbar-nav{
+        background-color: rgba(0, 0, 0, .75);
+        width: 100%;
+    }
+    .jumbotron h1{
+        font-size: 1.5em;
+    }
+    .jumbotron h2{
+        font-size: 3em;
+    }
+    .jumbotron h3{
+        font-size: 2.2em;
+    }
+    .jumbotron .vector-1{
+        top: 95vh;
+    }
+    .sambutan-presma .sambutan-presma-1 h2{
+        font-size: 1.7em;
+    }
+    .sambutan-presma .sambutan-presma-1 h2::after{
+        -webkit-text-stroke: 2px #fff;
+    }
+    .sambutan-presma .sambutan-presma-2 img{
+        width: 100%;
+        margin-left: 0;
+    }
+    .sambutan-presma .sambutan-presma-2 h3{
+        font-size: 1.2em;
+    }
+    .sambutan-presma .sambutan-presma-2 p{
+        font-size: 1em;
+    }
+    .sambutan-presma .sambutan-presma-2 a{
+        font-size: 1em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2{
+        font-size: 2em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .contact .bottom-navigation-1{
+        text-align: left;
+    }
+    .contact .bottom-navigation a{
+        font-size: 1.2em;
+    }
+    .contact h2{
+        font-size: 3em;
+    }
+    .contact p{
+        font-size: 1.25em;
+    }
+    .breadcrumbs{
+        font-size: 1em;
+    }
+    .jumbotron-tentang h1{
+        font-size: 1.75em;
+    }
+    .tentang .tentang-3 h1{
+        font-size: 2em;
+    }
+    .tentang .tentang-3 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .tentang-3 pre h2{
+        font-size: 1.3em;
+    }
+    .jumbotron-struktur-organisasi h1{
+        font-size: 1.75em;
+    }
+    .struktur-organisasi-2 h1{
+        font-size: 2em;
+    }
+    .struktur-organisasi-2 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .struktur-organisasi-4-2-1,
+    .struktur-organisasi-4-3-1,
+    .struktur-organisasi-4-4-1,
+    .struktur-organisasi-4-5-1,
+    .struktur-organisasi-4-6-1{
+        height: 200px;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-1,
+    .struktur-organisasi-4-2-2-1 .card .card-text-1,
+    .struktur-organisasi-4-3-2-1 .card .card-text-1,
+    .struktur-organisasi-4-4-2-1 .card .card-text-1,
+    .struktur-organisasi-4-5-2-1 .card .card-text-1,
+    .struktur-organisasi-4-6-2-1 .card .card-text-1,
+    .struktur-organisasi-4-2-2-2 .card .card-text-1,
+    .struktur-organisasi-4-3-2-2 .card .card-text-1,
+    .struktur-organisasi-4-4-2-2 .card .card-text-1,
+    .struktur-organisasi-4-5-2-2 .card .card-text-1,
+    .struktur-organisasi-4-6-2-2 .card .card-text-1{
+        -webkit-text-stroke: .3px #ffffff;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.5em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-2,
+    .struktur-organisasi-4-2-2-1 .card .card-text-2,
+    .struktur-organisasi-4-3-2-1 .card .card-text-2,
+    .struktur-organisasi-4-4-2-1 .card .card-text-2,
+    .struktur-organisasi-4-5-2-1 .card .card-text-2,
+    .struktur-organisasi-4-6-2-1 .card .card-text-2,
+    .struktur-organisasi-4-2-2-2 .card .card-text-2,
+    .struktur-organisasi-4-3-2-2 .card .card-text-2,
+    .struktur-organisasi-4-4-2-2 .card .card-text-2,
+    .struktur-organisasi-4-5-2-2 .card .card-text-2,
+    .struktur-organisasi-4-6-2-2 .card .card-text-2{
+        font-size: 1em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-3,
+    .struktur-organisasi-4-2-2-1 .card .card-text-3,
+    .struktur-organisasi-4-3-2-1 .card .card-text-3,
+    .struktur-organisasi-4-4-2-1 .card .card-text-3,
+    .struktur-organisasi-4-5-2-1 .card .card-text-3,
+    .struktur-organisasi-4-6-2-1 .card .card-text-3,
+    .struktur-organisasi-4-2-2-2 .card .card-text-3,
+    .struktur-organisasi-4-3-2-2 .card .card-text-3,
+    .struktur-organisasi-4-4-2-2 .card .card-text-3,
+    .struktur-organisasi-4-5-2-2 .card .card-text-3,
+    .struktur-organisasi-4-6-2-2 .card .card-text-3{
+        font-size: 1em;
+    }
+    .jumbotron-program-kerja h1{
+        font-size: 1.75em;
+    }
+    .program-kerja-2 h1{
+        font-size: 2em;
+    }
+    .program-kerja-2 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .program-kerja-3 .card{
+        margin: 10px;
+        min-height: 200px;
+    }
+    .program-kerja-3 .card h2{
+        font-size: 1.2em;
+    }
+    .jumbotron-dokumentasi h1{
+        font-size: 1.75em;
+    }
+    .dokumentasi-2 h1{
+        font-size: 2em;
+    }
+    .dokumentasi-2 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .dokumentasi-3 .card{
+        margin: 10px;
+    }
+    .dokumentasi-3 .card h2{
+        font-size: 1.2em;
+    }
+    .dokumentasi-3 .card p{
+        font-size: 1em;
+    }
+    .jumbotron-kontak h1{
+        font-size: 1.75em;
+    }
+    .kontak-2 h1{
+        font-size: 2em;
+    }
+    .kontak-2 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .jumbotron-profil-anggota h1{
+        font-size: 1.75em;
+    }
+    .profil-anggota-2 h1{
+        font-size: 2em;
+    }
+    .profil-anggota-2 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .profil-anggota-3{
+        font-size: 1.2em;
+    }
+    .jumbotron-program-kerja-detail h1{
+        font-size: 1.75em;
+    }
+    .program-kerja-detail-2 h1{
+        font-size: 2em;
+    }
+    .program-kerja-detail-2 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .program-kerja-detail-3 pre{
+        font-size: 1.2em;
+    }
+    .jumbotron-dokumentasi-detail h1{
+        font-size: 1.75em;
+    }
+    .dokumentasi-detail-2 h1{
+        font-size: 2em;
+    }
+    .dokumentasi-detail-2 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .dokumentasi-detail-3 pre{
+        font-size: 1.2em;
+    }
+    .jumbotron-developer h1{
+        font-size: 1.75em;
+    }
+    .developer-3 h1{
+        font-size: 2em;
+    }
+    .developer-3 h1::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+    .navbar .navbar-nav{
+        background-color: rgba(0, 0, 0, .75);
+    }
+    .jumbotron h1{
+        font-size: 1.5em;
+    }
+    .jumbotron h2{
+        font-size: 3em;
+    }
+    .jumbotron h3{
+        font-size: 2.2em;
+    }
+    .jumbotron .vector-1{
+        top: 94vh;
+    }
+    .sambutan-presma .sambutan-presma-1 h2{
+        font-size: 1.7em;
+    }
+    .sambutan-presma .sambutan-presma-1 h2::after{
+        -webkit-text-stroke: 2px #fff;
+    }
+    .sambutan-presma .sambutan-presma-2 img{
+        width: 100%;
+        margin-left: 0;
+    }
+    .sambutan-presma .sambutan-presma-2 h3{
+        font-size: 1.2em;
+    }
+    .sambutan-presma .sambutan-presma-2 p{
+        font-size: 1em;
+    }
+    .sambutan-presma .sambutan-presma-2 a{
+        font-size: 1em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2{
+        font-size: 2em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2::after{
+        -webkit-text-stroke: 2px #7D7D7D;
+    }
+    .contact .bottom-navigation-1{
+        text-align: left;
+    }
+    .contact .bottom-navigation a{
+        font-size: 1.2em;
+    }
+    .contact h2{
+        font-size: 3em;
+    }
+    .contact p{
+        font-size: 1.25em;
+    }
+    .breadcrumbs{
+        font-size: 1em;
+    }
+    .jumbotron-tentang h1{
+        font-size: 2em;
+    }
+    .tentang .tentang-3 h1{
+        font-size: 3em;
+    }
+    .tentang .tentang-3 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .tentang-3 pre h2{
+        font-size: 1.5em;
+    }
+    .jumbotron-struktur-organisasi h1{
+        font-size: 2em;
+    }
+    .struktur-organisasi-2 h1{
+        font-size: 2em;
+    }
+    .struktur-organisasi-2 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .struktur-organisasi-4-2-1,
+    .struktur-organisasi-4-3-1,
+    .struktur-organisasi-4-4-1,
+    .struktur-organisasi-4-5-1,
+    .struktur-organisasi-4-6-1{
+        height: 200px;
+        font-size: 1em;
+    }   
+    .struktur-organisasi-4-1-2 .card .card-text-1,
+    .struktur-organisasi-4-2-2-1 .card .card-text-1,
+    .struktur-organisasi-4-3-2-1 .card .card-text-1,
+    .struktur-organisasi-4-4-2-1 .card .card-text-1,
+    .struktur-organisasi-4-5-2-1 .card .card-text-1,
+    .struktur-organisasi-4-6-2-1 .card .card-text-1,
+    .struktur-organisasi-4-2-2-2 .card .card-text-1,
+    .struktur-organisasi-4-3-2-2 .card .card-text-1,
+    .struktur-organisasi-4-4-2-2 .card .card-text-1,
+    .struktur-organisasi-4-5-2-2 .card .card-text-1,
+    .struktur-organisasi-4-6-2-2 .card .card-text-1{
+        -webkit-text-stroke: .4px #ffffff;
+        -webkit-text-fill-color: transparent;
+        font-size: 2em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-2,
+    .struktur-organisasi-4-2-2-1 .card .card-text-2,
+    .struktur-organisasi-4-3-2-1 .card .card-text-2,
+    .struktur-organisasi-4-4-2-1 .card .card-text-2,
+    .struktur-organisasi-4-5-2-1 .card .card-text-2,
+    .struktur-organisasi-4-6-2-1 .card .card-text-2,
+    .struktur-organisasi-4-2-2-2 .card .card-text-2,
+    .struktur-organisasi-4-3-2-2 .card .card-text-2,
+    .struktur-organisasi-4-4-2-2 .card .card-text-2,
+    .struktur-organisasi-4-5-2-2 .card .card-text-2,
+    .struktur-organisasi-4-6-2-2 .card .card-text-2{
+        font-size: 1.5em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-3,
+    .struktur-organisasi-4-2-2-1 .card .card-text-3,
+    .struktur-organisasi-4-3-2-1 .card .card-text-3,
+    .struktur-organisasi-4-4-2-1 .card .card-text-3,
+    .struktur-organisasi-4-5-2-1 .card .card-text-3,
+    .struktur-organisasi-4-6-2-1 .card .card-text-3,
+    .struktur-organisasi-4-2-2-2 .card .card-text-3,
+    .struktur-organisasi-4-3-2-2 .card .card-text-3,
+    .struktur-organisasi-4-4-2-2 .card .card-text-3,
+    .struktur-organisasi-4-5-2-2 .card .card-text-3,
+    .struktur-organisasi-4-6-2-2 .card .card-text-3{
+        font-size: 1.5em;
+    }
+    .jumbotron-program-kerja h1{
+        font-size: 2em;
+    }
+    .program-kerja-2 h1{
+        font-size: 2em;
+    }
+    .program-kerja-2 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .program-kerja-3 .card{
+        margin: 10px;
+        min-height: 300px;
+    }
+    .program-kerja-3 .card h2{
+        font-size: 1.2em;
+    }
+    .jumbotron-dokumentasi h1{
+        font-size: 2em;
+    }
+    .dokumentasi-2 h1{
+        font-size: 2em;
+    }
+    .dokumentasi-2 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .dokumentasi-3 .card{
+        margin: 10px;
+    }
+    .dokumentasi-3 .card h2{
+        font-size: 1.2em;
+    }
+    .dokumentasi-3 .card p{
+        font-size: 1em;
+    }
+    .jumbotron-kontak h1{
+        font-size: 2em;
+    }
+    .kontak-2 h1{
+        font-size: 2em;
+    }
+    .kontak-2 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .jumbotron-profil-anggota h1{
+        font-size: 2em;
+    }
+    .profil-anggota-2 h1{
+        font-size: 2em;
+    }
+    .profil-anggota-2 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .profil-anggota-3{
+        font-size: 1.2em;
+    }
+    .jumbotron-program-kerja-detail h1{
+        font-size: 2em;
+    }
+    .program-kerja-detail-2 h1{
+        font-size: 2em;
+    }
+    .program-kerja-detail-2 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .program-kerja-detail-3 pre{
+        font-size: 1.2em;
+    }
+    .jumbotron-dokumentasi-detail h1{
+        font-size: 2em;
+    }
+    .dokumentasi-detail-2 h1{
+        font-size: 2em;
+    }
+    .dokumentasi-detail-2 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .dokumentasi-detail-3 pre{
+        font-size: 1.2em;
+    }
+    .jumbotron-developer h1{
+        font-size: 2em;
+    }
+    .developer-3 h1{
+        font-size: 2em;
+    }
+    .developer-3 h1::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+    .navbar .navbar-nav{
+        background-color: rgba(0, 0, 0, .75);
+        padding-right: 20px;
+    }
+    .jumbotron h1{
+        font-size: 3em;
+    }
+    .jumbotron h2{
+        font-size: 4.5em;
+    }
+    .jumbotron h3{
+        font-size: 3.4em;
+    }
+    .jumbotron .vector-1{
+        top: 90vh;
+    }
+    .sambutan-presma .sambutan-presma-1 h2{
+        font-size: 3.4em;
+    }
+    .sambutan-presma .sambutan-presma-1 h2::after{
+        -webkit-text-stroke: 3px #fff;
+    }
+    .sambutan-presma .sambutan-presma-2 h3{
+        font-size: 1.2em;
+    }
+    .sambutan-presma .sambutan-presma-2 p{
+        font-size: 1em;
+    }
+    .sambutan-presma .sambutan-presma-2 a{
+        font-size: 1em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2{
+        font-size: 2em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2::after{
+        -webkit-text-stroke: 3px #7D7D7D;
+    }
+    .contact .bottom-navigation-1{
+        text-align: left;
+    }
+    .contact h2{
+        font-size: 3em;
+    }
+    .contact p{
+        font-size: 1.25em;
+    }
+    .breadcrumbs{
+        font-size: 1.5em;
+    }
+    .jumbotron-tentang h1{
+        font-size: 3em;
+    }
+    .tentang .tentang-3 h1{
+        font-size: 4em;
+    }
+    .tentang .tentang-3 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .tentang-3 pre h2{
+        font-size: 2.25em;
+    }
+    .jumbotron-struktur-organisasi h1{
+        font-size: 3em;
+    }
+    .struktur-organisasi-2 h1{
+        font-size: 2em;
+    }
+    .struktur-organisasi-2 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .struktur-organisasi-4-2-1 h3,
+    .struktur-organisasi-4-3-1 h3,
+    .struktur-organisasi-4-4-1 h3,
+    .struktur-organisasi-4-5-1 h3,
+    .struktur-organisasi-4-6-1 h3{
+        font-size: 2em;
+    }    
+    .struktur-organisasi-4-1-2 .card .card-text-1,
+    .struktur-organisasi-4-2-2-1 .card .card-text-1,
+    .struktur-organisasi-4-3-2-1 .card .card-text-1,
+    .struktur-organisasi-4-4-2-1 .card .card-text-1,
+    .struktur-organisasi-4-5-2-1 .card .card-text-1,
+    .struktur-organisasi-4-6-2-1 .card .card-text-1,
+    .struktur-organisasi-4-2-2-2 .card .card-text-1,
+    .struktur-organisasi-4-3-2-2 .card .card-text-1,
+    .struktur-organisasi-4-4-2-2 .card .card-text-1,
+    .struktur-organisasi-4-5-2-2 .card .card-text-1,
+    .struktur-organisasi-4-6-2-2 .card .card-text-1{
+        -webkit-text-stroke: .5px #ffffff;
+        -webkit-text-fill-color: transparent;
+        font-size: 2em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-2,
+    .struktur-organisasi-4-2-2-1 .card .card-text-2,
+    .struktur-organisasi-4-3-2-1 .card .card-text-2,
+    .struktur-organisasi-4-4-2-1 .card .card-text-2,
+    .struktur-organisasi-4-5-2-1 .card .card-text-2,
+    .struktur-organisasi-4-6-2-1 .card .card-text-2,
+    .struktur-organisasi-4-2-2-2 .card .card-text-2,
+    .struktur-organisasi-4-3-2-2 .card .card-text-2,
+    .struktur-organisasi-4-4-2-2 .card .card-text-2,
+    .struktur-organisasi-4-5-2-2 .card .card-text-2,
+    .struktur-organisasi-4-6-2-2 .card .card-text-2{
+        font-size: 2em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-3,
+    .struktur-organisasi-4-2-2-1 .card .card-text-3,
+    .struktur-organisasi-4-3-2-1 .card .card-text-3,
+    .struktur-organisasi-4-4-2-1 .card .card-text-3,
+    .struktur-organisasi-4-5-2-1 .card .card-text-3,
+    .struktur-organisasi-4-6-2-1 .card .card-text-3,
+    .struktur-organisasi-4-2-2-2 .card .card-text-3,
+    .struktur-organisasi-4-3-2-2 .card .card-text-3,
+    .struktur-organisasi-4-4-2-2 .card .card-text-3,
+    .struktur-organisasi-4-5-2-2 .card .card-text-3,
+    .struktur-organisasi-4-6-2-2 .card .card-text-3{
+        font-size: 1.5em;
+    }
+    .program-kerja-2 h1{
+        font-size: 2em;
+    }
+    .program-kerja-2 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .program-kerja-3 .card{
+        margin: 20px;
+        min-height: 500px;
+    }
+    .program-kerja-3 .card h2{
+        font-size: 1.2em;
+    }
+    .dokumentasi-2 h1{
+        font-size: 2em;
+    }
+    .dokumentasi-2 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .dokumentasi-3 .card{
+        margin: 20px;
+    }
+    .dokumentasi-3 .card h2{
+        font-size: 1.2em;
+    }
+    .dokumentasi-3 .card h2{
+        font-size: 1em;
+    }
+    .jumbotron-kontak h1{
+        font-size: 5em;
+    }
+    .kontak-2 h1{
+        font-size: 2em;
+    }
+    .kontak-2 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .jumbotron-profil-anggota h1{
+        font-size: 5em;
+    }
+    .profil-anggota-2 h1{
+        font-size: 2em;
+    }
+    .profil-anggota-2 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .profil-anggota-3{
+        font-size: 1.2em;
+    }
+    .jumbotron-program-kerja-detail h1{
+        font-size: 5em;
+    }
+    .program-kerja-detail-2 h1{
+        font-size: 2em;
+    }
+    .program-kerja-detail-2 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .program-kerja-detail-3 pre{
+        font-size: 1.2em;
+    }
+    .jumbotron-dokumentasi-detail h1{
+        font-size: 5em;
+    }
+    .dokumentasi-detail-2 h1{
+        font-size: 2em;
+    }
+    .dokumentasi-detail-2 h1::after{
+        -webkit-text-stroke: 4px #7D7D7D;
+    }
+    .dokumentasi-detail-3 pre{
+        font-size: 1.2em;
+    }
+    .jumbotron-developer h1{
+        font-size: 5em;
+    }
+    .developer-3 h1{
+        font-size: 2em;
+    }
+    .developer-3 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .navbar .navbar-nav{
+        background-color: rgba(0, 0, 0, .75);
+    }
+    .jumbotron .vector-1{
+        top: 90vh;
+    }
+    .sambutan-presma .sambutan-presma-1 h2{
+        font-size: 4.5em;
+    }
+    .sambutan-presma .sambutan-presma-1 h2::after{
+        -webkit-text-stroke: 5px #fff;
+    }
+    .sambutan-presma .sambutan-presma-2 img{
+        width: 70%;
+        margin-left: 30%;
+    }
+    .sambutan-presma .sambutan-presma-2 h3{
+        font-size: 4em;
+    }
+    .sambutan-presma .sambutan-presma-2 p{
+        font-size: 2.2em;
+    }
+    .sambutan-presma .sambutan-presma-2 a{
+        font-size: 2.2em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2{
+        font-size: 4em;
+    }
+    .dokumentasi-terbaru .dokumentasi-terbaru-1 h2::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .contact .bottom-navigation{
+        padding-right: 20px;
+    }
+    .contact .bottom-navigation-1{
+        text-align: right;
+    }
+    .contact .bottom-navigation a{
+        font-size: 3em;
+    }
+    .contact h2{
+        font-size: 4em;
+    }
+    .contact p{
+        font-size: 2.25em;
+    }
+    .breadcrumbs{
+        font-size: 2em;
+    }
+    .jumbotron-tentang h1{
+        font-size: 4.5em;
+    }
+    .tentang .tentang-3 h1{
+        font-size: 5em;
+    }
+    .tentang .tentang-3 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .jumbotron-struktur-organisasi h1{
+        font-size: 4.5em;
+    }
+    .struktur-organisasi-2 h1{
+        font-size: 5em;
+    }
+    .struktur-organisasi-2 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .struktur-organisasi-4-2-1 h3,
+    .struktur-organisasi-4-3-1 h3,
+    .struktur-organisasi-4-4-1 h3,
+    .struktur-organisasi-4-5-1 h3,
+    .struktur-organisasi-4-6-1 h3{
+        font-size: 4em;
+    }
+    .struktur-organisasi-4-2-1,
+    .struktur-organisasi-4-3-1,
+    .struktur-organisasi-4-4-1,
+    .struktur-organisasi-4-5-1,
+    .struktur-organisasi-4-6-1{
+        height: 300px;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-1,
+    .struktur-organisasi-4-2-2-1 .card .card-text-1,
+    .struktur-organisasi-4-3-2-1 .card .card-text-1,
+    .struktur-organisasi-4-4-2-1 .card .card-text-1,
+    .struktur-organisasi-4-5-2-1 .card .card-text-1,
+    .struktur-organisasi-4-6-2-1 .card .card-text-1{
+        -webkit-text-stroke: 1px #ffffff;
+        -webkit-text-fill-color: transparent;
+        font-size: 3.5em;
+    }
+    .struktur-organisasi-4-2-2-2 .card .card-text-1,
+    .struktur-organisasi-4-3-2-2 .card .card-text-1,
+    .struktur-organisasi-4-4-2-2 .card .card-text-1,
+    .struktur-organisasi-4-5-2-2 .card .card-text-1,
+    .struktur-organisasi-4-6-2-2 .card .card-text-1{
+        -webkit-text-stroke: .5px #ffffff;
+        -webkit-text-fill-color: transparent;
+        font-size: 2em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-2,
+    .struktur-organisasi-4-2-2-1 .card .card-text-2,
+    .struktur-organisasi-4-3-2-1 .card .card-text-2,
+    .struktur-organisasi-4-4-2-1 .card .card-text-2,
+    .struktur-organisasi-4-5-2-1 .card .card-text-2,
+    .struktur-organisasi-4-6-2-1 .card .card-text-2,
+    .struktur-organisasi-4-2-2-2 .card .card-text-2,
+    .struktur-organisasi-4-3-2-2 .card .card-text-2,
+    .struktur-organisasi-4-4-2-2 .card .card-text-2,
+    .struktur-organisasi-4-5-2-2 .card .card-text-2,
+    .struktur-organisasi-4-6-2-2 .card .card-text-2{
+        font-size: 2em;
+    }
+    .struktur-organisasi-4-1-2 .card .card-text-3,
+    .struktur-organisasi-4-2-2-1 .card .card-text-3,
+    .struktur-organisasi-4-3-2-1 .card .card-text-3,
+    .struktur-organisasi-4-4-2-1 .card .card-text-3,
+    .struktur-organisasi-4-5-2-1 .card .card-text-3,
+    .struktur-organisasi-4-6-2-1 .card .card-text-3,
+    .struktur-organisasi-4-2-2-2 .card .card-text-3,
+    .struktur-organisasi-4-3-2-2 .card .card-text-3,
+    .struktur-organisasi-4-4-2-2 .card .card-text-3,
+    .struktur-organisasi-4-5-2-2 .card .card-text-3,
+    .struktur-organisasi-4-6-2-2 .card .card-text-3{
+        font-size: 1.5em;
+    }
+    .jumbotron-program-kerja h1{
+        font-size: 4.5em;
+    }
+    .program-kerja-2 h1{
+        font-size: 5em;
+    }
+    .program-kerja-2 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .program-kerja-3 .card{
+        margin: 30px;
+        min-height: 575px;
+    }
+    .program-kerja-3 .card h2{
+        font-size: 2.25em;
+    }
+    .jumbotron-dokumentasi h1{
+        font-size: 4.5em;
+    }
+    .dokumentasi-2 h1{
+        font-size: 5em;
+    }
+    .dokumentasi-2 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .dokumentasi-3 .card{
+        margin: 30px;
+    }
+    .dokumentasi-3 .card h2{
+        font-size: 2.25em;
+    }
+    .dokumentasi-3 .card p{
+        font-size: 2em;
+    }
+    .jumbotron-kontak h1{
+        font-size: 4.5em;
+    }
+    .kontak-2 h1{
+        font-size: 5em;
+    }
+    .kontak-2 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .jumbotron-profil-anggota h1{
+        font-size: 4.5em;
+    }
+    .profil-anggota-2 h1{
+        font-size: 5em;
+    }
+    .profil-anggota-2 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .profil-anggota-3{
+        font-size: 1.2em;
+    }
+    .jumbotron-program-kerja-detail h1{
+        font-size: 4.5em;
+    }
+    .program-kerja-detail-2 h1{
+        font-size: 5em;
+    }
+    .program-kerja-detail-2 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .program-kerja-detail-3 pre{
+        font-size: 2em;
+    }
+    .jumbotron-dokumentasi-detail h1{
+        font-size: 4.5em;
+    }
+    .dokumentasi-detail-2 h1{
+        font-size: 5em;
+    }
+    .dokumentasi-detail-2 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+    .dokumentasi-detail-3 pre{
+        font-size: 2em;
+    }
+    .jumbotron-developer h1{
+        font-size: 4.5em;
+    }
+    .developer-3 h1{
+        font-size: 5em;
+    }
+    .developer-3 h1::after{
+        -webkit-text-stroke: 5px #7D7D7D;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+    .navbar .navbar-nav{
+        background-color: transparent;
+    }
+    .jumbotron .vector-1{
+        top: 85vh;
+    }
+    .struktur-organisasi .struktur-organisasi-4-1 .card .card-text-1{
+        font-size: 4em;
+        -webkit-text-stroke: 0.5px #ffffff;
+    }
+    .struktur-organisasi .struktur-organisasi-4-1 .card .card-text-2{
+        font-size: 3em;
+    }
+    .struktur-organisasi .struktur-organisasi-4-1 .card .card-text-3{
+        font-size: 3.5em;
+    }
+    .profil-anggota-3{
+        font-size: 2em;
+    }
+}
+
+/*
+==================================================
+    12. ADMIN
+*/
+
+.navbar-admin{
+    min-height: 75px;
+    overflow-x: visible;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.dashboard-admin {
+    background-color: #E6E6E6;
+    min-height: calc(100vh - 150px);
+    padding-top: 100px;
+}
+
+.dashboard-admin textarea{
+    min-height: 200px;
+    max-height: 200px;
+}
